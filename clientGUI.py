@@ -45,7 +45,7 @@ class Application:
         if(message == "{exit}"):
                 root.quit()
         message = self.entry.get() + '\n'
-        server.send(message)
+        server.send(message.encode())
         ip = get('https://api.ipify.org').text
         self.textArea.insert(END, ip + ': ' + message)
         self.entry.delete(0, 'end')
